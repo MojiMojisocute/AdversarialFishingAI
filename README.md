@@ -1,6 +1,6 @@
 # Phishing Email Detection AI
 
-# Sample emails sourced from https://github.com/rf-peixoto/phishing_pot
+## Sample emails sourced from https://github.com/rf-peixoto/phishing_pot
 
 Project is an artificial intelligence (AI) phishing email detection system. It contains two AI models:
 1. **AI Email Generator (Llama-2)** - Generates phishing and normal emails.
@@ -15,7 +15,7 @@ Project is an artificial intelligence (AI) phishing email detection system. It c
 
 ## Project Structure
 ```
-phishing_ai_project/
+AdversarialFishingAI/
 │── generator.py        # AI generates phishing emails (Llama-2)
 │── detector.py         # AI detects phishing emails (Hybrid CNN + Transformer)
 │── score_system.py     # Reinforcement learning-based scoring system
@@ -27,8 +27,8 @@ phishing_ai_project/
 ## Installation
 ### 1️⃣ Clone the Repository
 ```
-git clone https://github.com/your-repo/phishing-ai.git
-cd phishing-ai
+git clone https://github.com/MojiMojisocute/AdversarialFishingAI.git
+cd AdversarialFishingAI
 ```
 
 ### 2️⃣ Install Dependencies
