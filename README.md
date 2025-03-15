@@ -1,6 +1,6 @@
 # Phishing Email Detection AI
 
-# Sample emails sourced from https://github.com/rf-peixoto/phishing_pot
+## Sample emails sourced from https://github.com/rf-peixoto/phishing_pot
 
 Project is an artificial intelligence (AI) phishing email detection system. It contains two AI models:
 1. **AI Email Generator (Llama-2)** - Generates phishing and normal emails.
