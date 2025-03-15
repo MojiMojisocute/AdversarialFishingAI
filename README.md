@@ -15,7 +15,7 @@ Project is an artificial intelligence (AI) phishing email detection system. It c
 
 ## Project Structure
 ```
-phishing_ai_project/
+AdversarialFishingAI/
 │── generator.py        # AI generates phishing emails (Llama-2)
 │── detector.py         # AI detects phishing emails (Hybrid CNN + Transformer)
 │── score_system.py     # Reinforcement learning-based scoring system
