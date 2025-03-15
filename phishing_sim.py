@@ -10,13 +10,22 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 def load_emails_from_folder(folder_path):
     emails = []
-    filenames = os.listdir(folder_path)
-    
-    for filename in filenames:
+    for filename in os.listdir(folder_path):
         file_path = os.path.join(folder_path, filename)
-        with open(file_path, 'r', encoding='utf-8') as f:
-            msg = email.message_from_file(f, policy=policy.default)
-            emails.append(msg.get_body(preferencelist=('plain')).get_content())
+        with open(file_path, "r", encoding="latin-1", errors="ignore") as file:
+            msg = email.message_from_file(file, policy=policy.default)
+
+            if msg.is_multipart():
+                body = ""
+                for part in msg.walk():
+                    content_type = part.get_content_type()
+                    if content_type == "text/plain":
+                        body = part.get_payload(decode=True).decode("utf-8", errors="ignore")
+                        break
+            else:
+                body = msg.get_payload(decode=True).decode("utf-8", errors="ignore")
+
+            emails.append(body)
     
     return emails
 
@@ -35,7 +44,10 @@ def phishing_simulation():
     generated_email = generate_email(prompt)
     is_phishing = "phishing" in prompt
 
-    detected_as_phishing = model(torch.tensor(vectorizer.transform([generated_email]).toarray(), dtype=torch.float)).argmax().item() == 1
+    # ใช้ sparse matrix โดยไม่ต้องแปลงเป็น array
+    email_vector = vectorizer.transform([generated_email])
+    detected_as_phishing = model(torch.tensor(email_vector.toarray(), dtype=torch.float)).argmax().item() == 1
+
     score_system.update_scores(is_phishing, detected_as_phishing)
     print("Scores:", score_system.get_scores())
 
