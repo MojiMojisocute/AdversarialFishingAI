@@ -27,7 +27,7 @@ AdversarialFishingAI/
 ## Installation
 ### 1️⃣ Clone the Repository
 ```
-git clone https://github.com/your-repo/AdversarialFishingAI.git
+git clone https://github.com/MojiMojisocute/AdversarialFishingAI.git
 cd AdversarialFishingAI
 ```
 
