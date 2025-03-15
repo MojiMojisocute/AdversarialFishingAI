@@ -27,8 +27,8 @@ AdversarialFishingAI/
 ## Installation
 ### 1️⃣ Clone the Repository
 ```
-git clone https://github.com/your-repo/phishing-ai.git
-cd phishing-ai
+git clone https://github.com/your-repo/AdversarialFishingAI.git
+cd AdversarialFishingAI
 ```
 
 ### 2️⃣ Install Dependencies
